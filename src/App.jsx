@@ -1,22 +1,13 @@
-import { useState } from "react";
 import React from "react";
-import { userForm } from "./useForm";
 
-const App = () =>{
- const [values, handleChange] = userForm({email:'', password:''});
-  
+import LoginForm from "./components/LoginForm";
+import ListPost from "./components/ListPost";
+
+const App = () => {
   return (
     <div>
-      <input name="email" 
-       value={values.email}
-       onChange={handleChange}
-      />
-       <input 
-       type="password" 
-       name="password"
-       value={values.password}
-       onChange={handleChange}
-       />
+      <LoginForm />
+      <ListPost />
     </div>
   );
 };
