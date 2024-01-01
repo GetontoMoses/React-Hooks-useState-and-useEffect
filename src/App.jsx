@@ -1,13 +1,22 @@
 import { useState } from "react";
 import React from "react";
+import { userForm } from "./useForm";
 
 const App = () =>{
- const [count,setCount] = useState(10);
+ const [values, handleChange] = userForm({email:'', password:''});
   
   return (
     <div>
-        <button onClick={() => setCount(count + 1)}>+</button>
-        <div>{count}</div>
+      <input name="email" 
+       value={values.email}
+       onChange={handleChange}
+      />
+       <input 
+       type="password" 
+       name="password"
+       value={values.password}
+       onChange={handleChange}
+       />
     </div>
   );
 };
